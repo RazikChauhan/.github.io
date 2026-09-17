@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en" style="">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>SocMgt — One Platform to Run Your Entire Community</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
+  <style>
+    @layer base {
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        overscroll-behavior: none;
+      }
+
+      main> :first-child {
+        margin-top: 0 !important;
+      }
+
+      main> :last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+
+    .glow-blue {
+      box-shadow: 0 10px 30px -8px rgba(37, 99, 235, 0.25);
+    }
+
+    .glow-emerald {
+      box-shadow: 0 10px 30px -8px rgba(16, 185, 129, 0.25);
+    }
+
+    .glow-amber {
+      box-shadow: 0 10px 30px -8px rgba(245, 158, 11, 0.25);
+    }
+
+    .glow-purple {
+      box-shadow: 0 10px 30px -8px rgba(124, 58, 237, 0.25);
+    }
+
+    .glow-rose {
+      box-shadow: 0 10px 30px -8px rgba(244, 63, 94, 0.25);
+    }
+
+    .glow-teal {
+      box-shadow: 0 10px 30px -8px rgba(13, 148, 136, 0.25);
+    }
+
+    .active-suite-tab {
+      border-color: #2563eb !important;
+      background-color: #eff6ff !important;
+      color: #1d4ed8 !important;
+      box-shadow: 0 4px 14px -2px rgba(37, 99, 235, 0.18);
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#004ac6",
+            "primary-container": "#2563eb",
+            "surface": "#f8f9ff",
+            "surface-container-low": "#eff4ff",
+            "surface-container": "#e5eeff",
+            "surface-container-high": "#dce9ff",
+            "surface-container-lowest": "#ffffff",
+            "on-surface": "#0b1c30",
+            "on-surface-variant": "#434655"
+          },
+          fontFamily: {
+            display: ["Inter"],
+            headline: ["Inter"],
+            body: ["Inter"]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body
+  class="bg-[#f8f9ff] font-['Inter',sans-serif] text-slate-900 antialiased selection:bg-blue-600 selection:text-white">
+  <!-- TOP STICKY NAVIGATION -->
+  <header
+    class="sticky top-0 left-0 right-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 py-3.5 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3 shrink-0"><a class="flex items-center gap-2 group" href="#"><img
+            alt="SocMgt Logo" class="h-9 w-9 object-contain rounded-lg"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBeVQBMiW0L756dAKSdNx0WkPd7n0uSnleLDtwAu1mZFYOEjt8fBEtvxt_Z5Enwaeat-9pfdnZIjgKY00i3HdHkIIhB2OC81jdrParE1-5NCMGdAyMdW4Bx9sQkR5qbSSm1PWHBTyHTr4VGT_bCXXc5eISEJXYNVPgYWhFszW7ZhxFSUN3GEMaVEoOnYGSXtxysfStwqkd3ryDVJjjQhC4P_HfL0ciw08NSdZjSbxYfUrAi9s4ZCVTcOPA-qZ3CaC6sw">
+          <div class="flex items-center gap-2"><span
+              class="text-xl font-extrabold tracking-tight text-slate-900">Soc<span
+                class="text-blue-600">Mgt</span></span><span
+              class="hidden sm:inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200/80 uppercase tracking-wider">Enterprise
+              OS</span></div>
+        </a></div>
+      <nav
+        class="hidden lg:flex items-center gap-1 xl:gap-1.5 whitespace-nowrap text-[13px] font-medium text-slate-600"><a
+          class="px-2.5 py-1.5 rounded-md hover:text-blue-600 hover:bg-slate-50 transition-colors"
+          href="#ecosystem">Ecosystem</a><a
+          class="px-2.5 py-1.5 rounded-md hover:text-blue-600 hover:bg-slate-50 transition-colors"
+          href="#suites">Suites</a><a
+          class="px-2.5 py-1.5 rounded-md hover:text-blue-600 hover:bg-slate-50 transition-colors"
+          href="#security">Security</a><a
+          class="px-2.5 py-1.5 rounded-md hover:text-blue-600 hover:bg-slate-50 transition-colors"
+          href="#finance">Finance</a><a
+          class="px-2.5 py-1.5 rounded-md hover:text-blue-600 hover:bg-slate-50 transition-colors"
+          href="#infrastructure">Infrastructure</a><a
+          class="px-2.5 py-1.5 rounded-md hover:text-blue-600 hover:bg-slate-50 transition-colors"
+          href="#resident-life">Resident Life</a><a
+          class="px-2.5 py-1.5 rounded-md hover:text-blue-600 hover:bg-slate-50 transition-colors"
+          href="#governance">Governance</a><a
+          class="px-2.5 py-1.5 rounded-md hover:text-blue-600 hover:bg-slate-50 transition-colors"
+          href="#calculator">Calculator</a></nav>
+      <div class="flex items-center gap-2.5 shrink-0"><a
+          class="text-[13px] font-medium text-slate-700 hover:text-blue-600 px-3 py-1.5 hidden sm:inline-block transition-colors whitespace-nowrap"
+          href="https://app.socmgt.com/login" rel="noopener noreferrer" target="_blank">Sign In</a><a
+          class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-[13px] font-semibold shadow-sm transition-all whitespace-nowrap"
+          href="#book-demo"><span class="">Book a Demo</span><span
+            class="material-symbols-outlined text-[16px]">arrow_forward</span></a></div>
+    </div>
+  </header>
+  <main class="w-full">
+    <!-- SECTION 1: HERO SECTION -->
+    <section
+      class="relative w-full overflow-hidden bg-gradient-to-b from-blue-50/60 via-[#f8f9ff] to-blue-50/30 pt-8 pb-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6"><!-- Top Full Image Hero Showcase Banner -->
+        <div
+          class="relative w-full rounded-3xl overflow-hidden shadow-2xl bg-slate-950 min-h-[460px] lg:min-h-[560px] flex flex-col justify-between p-4 sm:p-6 lg:p-8 border border-slate-800 mb-10">
+          <div class="absolute inset-0 z-0"><img alt="Modern luxury residential high-rise community illuminated at dusk"
+              class="w-full h-full object-cover object-center opacity-95 transition-transform duration-1000 scale-[1.01]"
+              src="https://lh3.googleusercontent.com/aida/AEtjO1UGqKh8BZ1hkaYUQgapywgvpR9aEZeEdTFK781aibTPpCELp8feN0r4iWmU-yATfsV-XOOMy2zsYgvgymJFvO4BzQy1G8Zzwnc7B3aIRQDpJpszfLLbBWFvxHPNmUun715D1KrVCDNTKOdvjO-1PSxBTQP2U5Bd7oPr9Ml8IinTOvco77E9s0MdKti_47_42oJZGbOMlXuREazicn9rJ-ti8goI07CIfgEjiz7QL3Y2tB1RVPQqbxXUIw">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/45 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-slate-950/80 via-transparent to-slate-950/50"></div>
+          </div><!-- Top HUD Live Strip -->
+          <div class="relative z-10 flex flex-wrap items-center justify-between gap-3">
+            <div
+              class="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 backdrop-blur-md border border-cyan-400/40 text-cyan-300 text-xs font-semibold shadow-lg">
+              <span class="w-2.5 h-2.5 rounded-full bg-cyan-400 animate-ping"></span><span class="">Live Property
+                Context Switcher: Solaria Palms Township</span>
+            </div>
+            <div class="flex items-center gap-2"><span
+                class="px-3 py-1 rounded-lg bg-slate-900/80 backdrop-blur-md border border-emerald-400/30 text-emerald-300 text-xs font-semibold flex items-center gap-1.5"><span
+                  class="material-symbols-outlined text-[15px]">electric_meter</span> 48 Units Automated
+                Billing</span><span
+                class="hidden sm:inline-flex px-3 py-1 rounded-lg bg-slate-900/80 backdrop-blur-md border border-blue-400/30 text-blue-200 text-xs font-semibold items-center gap-1.5"><span
+                  class="material-symbols-outlined text-[15px]">security</span> Guard Terminal Online</span></div>
+          </div><!-- Colorful Live Telemetry Overlay Cards -->
+          <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-4 my-auto pt-6 pb-6 max-w-4xl">
+            <!-- Metric 1: Financial & Assessment -->
+            <div
+              class="bg-slate-900/90 backdrop-blur-md rounded-2xl p-4 shadow-2xl border border-blue-500/30 glow-blue transform hover:-translate-y-1 transition-all">
+              <div class="flex items-center justify-between mb-2"><span
+                  class="text-xs uppercase tracking-wider text-blue-300 font-bold flex items-center gap-1.5"><span
+                    class="w-2 h-2 rounded-full bg-blue-400"></span> Billing &amp; Collections</span><span
+                  class="material-symbols-outlined text-blue-400 text-[20px]">account_balance_wallet</span></div>
+              <div class="text-3xl font-extrabold text-white">₹38.4L</div>
+              <div class="text-xs font-semibold text-emerald-400 mt-1 flex items-center gap-1"><span class="">99.4%
+                  On-Time Settlement</span> • Razorpay / UPI</div>
+              <div class="w-full bg-slate-800 h-1.5 rounded-full mt-3 overflow-hidden">
+                <div class="bg-gradient-to-r from-blue-500 to-cyan-400 h-full rounded-full" style="width: 98%;"></div>
+              </div>
+            </div><!-- Metric 2: Perimeter & Smart Pass -->
+            <div
+              class="bg-slate-900/90 backdrop-blur-md rounded-2xl p-4 shadow-2xl border border-amber-500/30 glow-amber transform hover:-translate-y-1 transition-all">
+              <div class="flex items-center justify-between mb-2"><span
+                  class="text-xs uppercase tracking-wider text-amber-300 font-bold flex items-center gap-1.5"><span
+                    class="w-2 h-2 rounded-full bg-amber-400"></span> Gate Ingress Speed</span><span
+                  class="material-symbols-outlined text-amber-400 text-[20px]">qr_code_scanner</span></div>
+              <div class="text-3xl font-extrabold text-white">1.8s</div>
+              <div class="text-xs font-semibold text-amber-400 mt-1 flex items-center gap-1"><span class="">Pre-Approved
+                  Guest Pass</span> • Zero Lineups</div>
+              <div class="w-full bg-slate-800 h-1.5 rounded-full mt-3 overflow-hidden">
+                <div class="bg-gradient-to-r from-amber-400 to-orange-500 h-full rounded-full" style="width: 94%;">
+                </div>
+              </div>
+            </div><!-- Metric 3: Asset SLA & AMC -->
+            <div
+              class="bg-slate-900/90 backdrop-blur-md rounded-2xl p-4 shadow-2xl border border-emerald-500/30 glow-emerald transform hover:-translate-y-1 transition-all">
+              <div class="flex items-center justify-between mb-2"><span
+                  class="text-xs uppercase tracking-wider text-emerald-300 font-bold flex items-center gap-1.5"><span
+                    class="w-2 h-2 rounded-full bg-emerald-400"></span> Preventive AMC</span><span
+                  class="material-symbols-outlined text-emerald-400 text-[20px]">engineering</span></div>
+              <div class="text-3xl font-extrabold text-white">100%</div>
+              <div class="text-xs font-semibold text-emerald-400 mt-1 flex items-center gap-1"><span class="">Lifts, DG
+                  &amp; STP Validated</span> • QR Workorders</div>
+              <div class="w-full bg-slate-800 h-1.5 rounded-full mt-3 overflow-hidden">
+                <div class="bg-gradient-to-r from-emerald-400 to-teal-400 h-full rounded-full" style="width: 100%;">
+                </div>
+              </div>
+            </div>
+          </div><!-- Bottom Role Context Navigation Strip -->
+          <div
+            class="relative z-10 bg-slate-900/90 backdrop-blur-md px-4 py-2.5 rounded-xl border border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs">
+            <div class="flex items-center gap-2 overflow-x-auto"><span
+                class="text-slate-400 font-semibold uppercase tracking-wider">Role Workspaces:</span><span
+                class="px-2.5 py-1 rounded bg-blue-600 text-white font-medium">MC President</span><span
+                class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 font-medium">Society Treasurer</span><span
+                class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 font-medium">Facility Manager</span><span
+                class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 font-medium">Security Guard</span><span
+                class="px-2.5 py-1 rounded bg-slate-800 text-slate-300 font-medium">Resident Owner</span></div>
+            <div class="flex items-center gap-1.5 text-emerald-400 font-semibold"><span
+                class="w-2 h-2 rounded-full bg-emerald-400"></span> 99.99% Cloud Uptime Guarantee</div>
+          </div>
+        </div><!-- Badges -->
+        <div class="flex flex-wrap items-center gap-2.5 mb-5">
+          <div
+            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-600/10 border border-blue-500/20 text-blue-700 text-xs font-bold shadow-sm">
+            <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span><span class="">ENTERPRISE RESIDENTIAL
+              CLOUD</span>
+          </div><span
+            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold"><span
+              class="w-2 h-2 rounded-full bg-emerald-500"></span> 29 Production Modules in 6 Suites</span><span
+            class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-50 border border-purple-200 text-purple-700 text-xs font-bold"><span
+              class="material-symbols-outlined text-[14px]">bolt</span> Razorpay • UPI • QuestPDF Engine</span>
+        </div><!-- Headline, Copy & CTA -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
+          <div class="lg:col-span-8">
+            <h1 class="text-4xl sm:text-5xl lg:text-[58px] font-extrabold text-slate-900 tracking-tight leading-[1.08]">
+              One Platform to Run Your <span
+                class="bg-gradient-to-r from-blue-600 via-indigo-600 to-teal-500 bg-clip-text text-transparent underline decoration-blue-300 decoration-4 underline-offset-4">Entire
+                Community</span>.</h1>
+            <p class="text-lg sm:text-xl text-slate-600 mt-4 max-w-2xl leading-relaxed">Consolidate multi-society
+              operations into 6 interconnected solution suites. From biometric gate verification and CPA-grade ledgers
+              to IoT sub-meters and cryptographic e-voting—engineered on a unified database schema.</p>
+          </div>
+          <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3"><a
+              class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-sm px-6 py-4 rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg shadow-blue-600/25 group"
+              href="#book-demo"><span class="">Book Personalized Demo</span><span
+                class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">calendar_month</span></a><a
+              class="w-full inline-flex items-center justify-center gap-2 bg-white text-slate-800 font-bold text-sm px-6 py-4 rounded-xl shadow-sm border border-slate-200 hover:bg-slate-50 transition-colors"
+              href="#suites"><span class="material-symbols-outlined text-[20px] text-blue-600">hub</span><span
+                class="">Explore 6 Solution Suites</span></a>
+            <div class="flex items-center gap-2 pt-1 text-xs text-slate-500 font-medium"><span
+                class="material-symbols-outlined text-emerald-600 text-[18px]">verified</span><span class="">Certified
+                for RWAs, Condominiums, HOAs &amp; Gated Townships</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SECTION 2: INTERACTIVE ECOSYSTEM MAP / ARCHITECTURE HUB -->
+    <section class="py-16 bg-white border-y border-blue-100/70" id="ecosystem" style="scroll-margin-top: 5rem;">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+        <!-- BLOCK 1: OVERALL RESIDENTIAL SMART COMMUNITY ECOSYSTEM -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center pb-16 border-b border-slate-200">
+          <div class="lg:col-span-5 space-y-5">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold">
+              <span class="material-symbols-outlined text-[16px] text-blue-600">account_tree</span>
+              <span class="">INTEGRATED SYSTEM TOPOLOGY</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+              The Residential Smart Community Ecosystem
+            </h2>
+            <p class="text-base text-slate-600 leading-relaxed">
+              Unlike fragmented point products that break during sync, SocMgt runs on a singular, unified PostgreSQL and
+              event-driven microservices core. All 29 modules feed live telemetry into 6 purposeful solution suites.
+            </p>
+            <div class="space-y-3 pt-2">
+              <a class="flex items-start gap-3 p-3.5 rounded-2xl bg-blue-50/50 hover:bg-blue-50 border border-blue-100 transition-all group"
+                href="#suite-1">
+                <div
+                  class="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center shrink-0 shadow-md">
+                  <span class="material-symbols-outlined text-[20px]">shield</span>
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">Perimeter
+                    &amp; Access Layer</div>
+                  <p class="text-xs text-slate-500">Guard tablet terminals, pre-approved visitor passes &amp; ANPR
+                    parking.</p>
+                </div>
+              </a>
+              <a class="flex items-start gap-3 p-3.5 rounded-2xl bg-emerald-50/50 hover:bg-emerald-50 border border-emerald-100 transition-all group"
+                href="#suite-2">
+                <div
+                  class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-md">
+                  <span class="material-symbols-outlined text-[20px]">payments</span>
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">Financial
+                    Ledger &amp; Invoicing Core</div>
+                  <p class="text-xs text-slate-500">Razorpay/UPI auto-clearing, utility meters &amp; QuestPDF audit
+                    reports.</p>
+                </div>
+              </a>
+              <a class="flex items-start gap-3 p-3.5 rounded-2xl bg-teal-50/50 hover:bg-teal-50 border border-teal-100 transition-all group"
+                href="#suite-3">
+                <div
+                  class="w-10 h-10 rounded-xl bg-teal-600 text-white flex items-center justify-center shrink-0 shadow-md">
+                  <span class="material-symbols-outlined text-[20px]">precision_manufacturing</span>
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-slate-900 group-hover:text-teal-700 transition-colors">Preventive
+                    Infrastructure &amp; Assets</div>
+                  <p class="text-xs text-slate-500">IoT substations, QR work orders, and clubhouse amenity booking
+                    engine.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="lg:col-span-7">
+            <div
+              class="relative bg-gradient-to-tr from-slate-50 to-blue-50/40 p-3 sm:p-5 rounded-3xl border border-blue-100 shadow-xl overflow-hidden group">
+              <div class="relative rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-white"><img
+                  alt="Ultra-HD 4K Residential Smart Community Ecosystem Diagram"
+                  class="w-full h-auto object-contain transform group-hover:scale-[1.01] transition-transform duration-700"
+                  src="Image04.png">
+              </div>
+              <div
+                class="mt-4 flex flex-wrap items-center justify-between gap-3 px-2 text-xs font-semibold text-slate-700">
+                <div class="flex items-center gap-2"><span
+                    class="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse"></span><span class="font-bold">Real-time
+                    Event Bus: Zero Sync Latency</span></div>
+                <div class="flex items-center gap-2 text-blue-700"><span
+                    class="material-symbols-outlined text-[16px]">verified</span><span class="font-bold">6 Suites • 29
+                    Modules • 1 Cloud DB</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCK 2: MULTI-TENANT CLOUD HIERARCHY & ONBOARDING -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center pb-16 border-b border-slate-200">
+          <div class="lg:col-span-7 order-2 lg:order-1">
+            <div
+              class="relative bg-gradient-to-tr from-slate-50 to-blue-50/40 p-3 sm:p-5 rounded-3xl border border-blue-100 shadow-xl overflow-hidden group">
+              <div class="relative rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-white">
+                <img alt="Multi-tenant residential community onboarding and hierarchy diagram"
+                  class="w-full h-auto object-cover transform group-hover:scale-[1.01] transition-transform duration-700"
+                  src="image02.png">
+              </div>
+              <div
+                class="mt-4 flex flex-wrap items-center justify-between gap-3 px-2 text-xs font-semibold text-slate-600">
+                <div class="flex items-center gap-2 text-blue-700">
+                  <span class="material-symbols-outlined text-[16px]">lock</span>
+                  <span class="">PostgreSQL Row-Level Security • 100% Tenant Isolation</span>
+                </div>
+                <div class="flex items-center gap-2 text-slate-600">
+                  <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+                  <span class="">Role-Based RBAC Permissions</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 space-y-5 order-1 lg:order-2">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold">
+              <span class="material-symbols-outlined text-[16px] text-blue-600">domain</span>
+              <span class="">MULTI-TENANT ARCHITECTURE &amp; ONBOARDING</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+              Architectural Precision from Society to Unit Level
+            </h2>
+            <p class="text-base text-slate-600 leading-relaxed">
+              Seamlessly onboard multi-block complexes and manage granular permissions with zero data leakage across
+              tenants.
+            </p>
+            <div class="space-y-3 pt-2">
+              <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-blue-50/50 border border-blue-100 transition-all">
+                <div
+                  class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-md">
+                  <span class="material-symbols-outlined text-[20px]">settings_system_daydream</span>
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-slate-900">Module 01: Multi-Tenant Onboarding &amp; Society Setup
+                  </div>
+                  <p class="text-xs text-slate-500">Self-service onboarding capturing GSTIN, INR ledger structures, and
+                    isolated database schema provisioning.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-blue-50/50 border border-blue-100 transition-all">
+                <div
+                  class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center shrink-0 shadow-md">
+                  <span class="material-symbols-outlined text-[20px]">account_tree</span>
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-slate-900">Module 02 &amp; 03: Dynamic Hierarchy &amp; Context
+                    Switcher</div>
+                  <p class="text-xs text-slate-500">Models Wings, Floors, Units &amp; common assets; instant 1-tap
+                    switching across multiple flats for owners &amp; managers.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3 p-3.5 rounded-2xl bg-blue-50/50 border border-blue-100 transition-all">
+                <div
+                  class="w-10 h-10 rounded-xl bg-slate-800 text-white flex items-center justify-center shrink-0 shadow-md">
+                  <span class="material-symbols-outlined text-[20px]">table_view</span>
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-slate-900">Module 04 &amp; 27: Resident Directory &amp; Bulk Excel
+                    Import</div>
+                  <p class="text-xs text-slate-500">Centralizes owners, tenants, and lease agreements with instant bulk
+                    validation and offline export capabilities.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCK 3: AUTOMATED UTILITY METERING, QUESTPDF & NOTIFICATIONS -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center pb-16 border-b border-slate-200">
+          <div class="lg:col-span-5 space-y-5">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold">
+              <span class="material-symbols-outlined text-[16px] text-emerald-600">electric_meter</span>
+              <span class="">FINANCIAL AUTOMATION &amp; METERING CORE</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+              Zero-Leakage Consumption Billing with Multi-Channel Dispatch
+            </h2>
+            <p class="text-base text-slate-600 leading-relaxed">
+              Eliminate manual calculation errors with automatic tiered tariff calculation and instant tax invoice
+              generation.
+            </p>
+            <div class="space-y-3 pt-2">
+              <div
+                class="flex items-start gap-3 p-3.5 rounded-2xl bg-emerald-50/50 border border-emerald-100 transition-all">
+                <div
+                  class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-md">
+                  <span class="material-symbols-outlined text-[20px]">speed</span>
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-slate-900">Module 23: Utility Meter Reading &amp; Variable Tariffs
+                  </div>
+                  <p class="text-xs text-slate-500">Automated tiered billing for piped gas, sub-metered power, and water
+                    directly integrated into monthly maintenance bills.</p>
+                </div>
+              </div>
+              <div
+                class="flex items-start gap-3 p-3.5 rounded-2xl bg-emerald-50/50 border border-emerald-100 transition-all">
+                <div
+                  class="w-10 h-10 rounded-xl bg-teal-600 text-white flex items-center justify-center shrink-0 shadow-md">
+                  <span class="material-symbols-outlined text-[20px]">picture_as_pdf</span>
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-slate-900">Module 28: QuestPDF &amp; ClosedXML Document Engine
+                  </div>
+                  <p class="text-xs text-slate-500">Generates print-ready A4 Portrait tax invoices, GST receipts, and
+                    offline Excel balance sheets in milliseconds.</p>
+                </div>
+              </div>
+              <div
+                class="flex items-start gap-3 p-3.5 rounded-2xl bg-emerald-50/50 border border-emerald-100 transition-all">
+                <div
+                  class="w-10 h-10 rounded-xl bg-cyan-600 text-white flex items-center justify-center shrink-0 shadow-md">
+                  <span class="material-symbols-outlined text-[20px]">send_to_mobile</span>
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-slate-900">Module 22: Multi-Channel Notification Engine</div>
+                  <p class="text-xs text-slate-500">Granular WhatsApp, SMS, Push, and Email alerts with custom member
+                    delivery preference controls.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-7">
+            <div
+              class="relative bg-gradient-to-tr from-slate-50 to-emerald-50/40 p-3 sm:p-5 rounded-3xl border border-emerald-100 shadow-xl overflow-hidden group">
+              <div class="relative rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-white">
+                <img alt="Automated utility metering and notification engine diagram"
+                  class="w-full h-auto object-cover transform group-hover:scale-[1.01] transition-transform duration-700"
+                  src="image03.png">
+              </div>
+              <div
+                class="mt-4 flex flex-wrap items-center justify-between gap-3 px-2 text-xs font-semibold text-slate-600">
+                <div class="flex items-center gap-2 text-emerald-700">
+                  <span class="material-symbols-outlined text-[16px]">receipt_long</span>
+                  <span class="">Instant QuestPDF Render • Sub-Second WhatsApp &amp; SMS Beacons</span>
+                </div>
+                <div class="flex items-center gap-2 text-slate-600">
+                  <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span class="">Tier 1-3 Dynamic Formulas</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BLOCK 4: DIGITAL GOVERNANCE, DOCUMENT VAULT & RENOVATION APPROVALS -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div class="lg:col-span-7 order-2 lg:order-1">
+            <div
+              class="relative bg-gradient-to-tr from-slate-50 to-purple-50/40 p-3 sm:p-5 rounded-3xl border border-purple-200 shadow-xl overflow-hidden group">
+              <div class="relative rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-white">
+                <img alt="Isometric 3D vector diagram of resident voting document vault and renovation approvals"
+                  class="w-full h-auto object-cover transform group-hover:scale-[1.01] transition-transform duration-700"
+                  src="image05.png">
+              </div>
+              <div
+                class="mt-4 flex flex-wrap items-center justify-between gap-3 px-2 text-xs font-semibold text-slate-600">
+                <div class="flex items-center gap-2 text-purple-700">
+                  <span class="material-symbols-outlined text-[16px]">how_to_vote</span>
+                  <span class="">Cryptographic E-Voting • Immutable Audit Vault</span>
+                </div>
+                <div class="flex items-center gap-2 text-slate-600">
+                  <span class="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></span>
+                  <span class="">Legally Binding Digital Resolutions</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 space-y-5 order-1 lg:order-2">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100 text-purple-900 text-xs font-bold">
+              <span class="material-symbols-outlined text-[16px] text-purple-600">policy</span>
+              <span class="">LEGAL INTEGRITY &amp; DEMOCRATIC GOVERNANCE</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+              Auditable Committee Consensus &amp; Tamper-Evident Records
+            </h2>
+            <p class="text-base text-slate-600 leading-relaxed">
+              Conduct legally binding secret ballots, store perpetual architectural blueprints, and manage contractor
+              clearances.
+            </p>
+            <div class="space-y-3 pt-2">
+              <div
+                class="flex items-start gap-3 p-3.5 rounded-2xl bg-purple-50/50 border border-purple-200/70 transition-all">
+                <div
+                  class="w-10 h-10 rounded-xl bg-purple-900 text-white flex items-center justify-center shrink-0 shadow-md">
+                  <span class="material-symbols-outlined text-[20px]">ballot</span>
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-slate-900">Module 21: Democratic Polls &amp; Secret Ballots</div>
+                  <p class="text-xs text-slate-500">Cryptographic resident e-voting with dynamic participation quorum
+                    tracking and automated results tallying.</p>
+                </div>
+              </div>
+              <div
+                class="flex items-start gap-3 p-3.5 rounded-2xl bg-purple-50/50 border border-purple-200/70 transition-all">
+                <div
+                  class="w-10 h-10 rounded-xl bg-purple-700 text-white flex items-center justify-center shrink-0 shadow-md">
+                  <span class="material-symbols-outlined text-[20px]">folder_zip</span>
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-slate-900">Module 16 &amp; 17: Encrypted Document Vault &amp; AGM
+                    Minutes</div>
+                  <p class="text-xs text-slate-500">Immutable storage for bylaws, fire NOCs, and automated publication
+                    of signed meeting minutes.</p>
+                </div>
+              </div>
+              <div
+                class="flex items-start gap-3 p-3.5 rounded-2xl bg-purple-50/50 border border-purple-200/70 transition-all">
+                <div
+                  class="w-10 h-10 rounded-xl bg-amber-600 text-white flex items-center justify-center shrink-0 shadow-md">
+                  <span class="material-symbols-outlined text-[20px]">approval</span>
+                </div>
+                <div>
+                  <div class="text-sm font-bold text-slate-900">Module 24: Architectural Renovation &amp; NOC Approvals
+                  </div>
+                  <p class="text-xs text-slate-500">Formalized modification workflow with contractor background
+                    verification, security deposit escrow, and committee sign-off.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SECTION 3: THE 5 COMPREHENSIVE ALTERNATING PHOTOGRAPHIC SHOWCASES -->
+    <section class="py-20 bg-[#f8f9ff]" id="suites" style="scroll-margin-top: 5rem;">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold mb-3">
+            <span class="material-symbols-outlined text-[16px] text-blue-600">view_compact</span>
+            <span class="">UNIFIED RESIDENTIAL PLATFORM</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            5 Photographic Showcases. 29 Interconnected Modules.
+          </h2>
+          <p class="text-base text-slate-600 mt-3 leading-relaxed">
+            Explore our deep-tier enterprise residential cloud across security gates, institutional accounting,
+            preventive facility SLAs, resident lifestyle, and legal committee governance.
+          </p>
+        </div>
+        <!-- ========================= SHOWCASE 1: SECURITY & GATE ACCESS ========================= -->
+        <div class="bg-white rounded-3xl p-6 sm:p-10 border border-blue-200/80 shadow-xl mb-16 glow-blue"
+          id="resident-cascade-engine">
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100/80 border border-blue-200 text-blue-700 text-xs font-bold">
+              <span class="material-symbols-outlined text-[16px] text-blue-600">badge</span><span class="">LIVE
+                OPERATIONAL CASCADE MATRIX</span>
+            </div>
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span><span class="">Interactive Engine
+                Ready</span>
+            </div>
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight mb-2">Experience
+            the Resident Directory &amp; Onboarding Cascade in Real Time.</h3>
+          <p class="text-sm sm:text-base text-slate-600 max-w-4xl leading-relaxed mb-8">Centralizes member records for
+            primary owners, co-owners, tenants, family members, and authorized occupants. Captures emergency contacts,
+            government ID documentation, move-in/move-out dates, and digital tenant agreements. Enforces strict
+            role-based access control, account activation states, and registered mobile device tracking.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 mb-8" id="resident-scenario-tabs"><button
+              onclick="switchResidentScenario(0)"
+              class="scenario-resident-tab text-left p-4 rounded-2xl border-2 transition-all cursor-pointer border-blue-600 bg-blue-50/60 shadow-sm"
+              data-index="0">
+              <div class="flex items-center justify-between mb-2">
+                <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center"><span
+                    class="material-symbols-outlined text-[20px]">person_add</span></div><span
+                  class="text-[11px] font-bold text-blue-800 uppercase tracking-wider">Scenario 01</span>
+              </div>
+              <div class="text-sm font-bold text-slate-900">Digital Tenant Move-In &amp; KYC Approval</div>
+              <div class="text-xs text-slate-500 mt-1">Lease deed verification, owner e-sign &amp; gate pass setup</div>
+            </button><button onclick="switchResidentScenario(1)"
+              class="scenario-resident-tab text-left p-4 rounded-2xl border-2 transition-all cursor-pointer border-slate-200 hover:border-slate-300 bg-slate-50/50"
+              data-index="1">
+              <div class="flex items-center justify-between mb-2">
+                <div class="w-9 h-9 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center"><span
+                    class="material-symbols-outlined text-[20px]">domain_add</span></div><span
+                  class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Scenario 02</span>
+              </div>
+              <div class="text-sm font-bold text-slate-900">Multi-Unit Property Context Switcher</div>
+              <div class="text-xs text-slate-500 mt-1">Dual-flat owner dynamic role &amp; billing re-scoping</div>
+            </button><button onclick="switchResidentScenario(2)"
+              class="scenario-resident-tab text-left p-4 rounded-2xl border-2 transition-all cursor-pointer border-slate-200 hover:border-slate-300 bg-slate-50/50"
+              data-index="2">
+              <div class="flex items-center justify-between mb-2">
+                <div class="w-9 h-9 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center"><span
+                    class="material-symbols-outlined text-[20px]">phonelink_lock</span></div><span
+                  class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Scenario 03</span>
+              </div>
+              <div class="text-sm font-bold text-slate-900">Emergency Contact &amp; Device Re-Authorization</div>
+              <div class="text-xs text-slate-500 mt-1">Biometric 2FA &amp; active session revoking</div>
+            </button><button onclick="switchResidentScenario(3)"
+              class="scenario-resident-tab text-left p-4 rounded-2xl border-2 transition-all cursor-pointer border-slate-200 hover:border-slate-300 bg-slate-50/50"
+              data-index="3">
+              <div class="flex items-center justify-between mb-2">
+                <div class="w-9 h-9 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center"><span
+                    class="material-symbols-outlined text-[20px]">logout</span></div><span
+                  class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Scenario 04</span>
+              </div>
+              <div class="text-sm font-bold text-slate-900">Tenant Move-Out &amp; Auto No-Dues Clearance</div>
+              <div class="text-xs text-slate-500 mt-1">Deposit refund calc, key return &amp; gate deactivation</div>
+            </button></div>
+          <div class="bg-slate-50/80 rounded-2xl border border-slate-200 p-5 sm:p-7">
+            <div class="flex flex-wrap items-center justify-between gap-3 pb-5 border-b border-slate-200 mb-6">
+              <div><span
+                  class="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-[11px] font-bold uppercase tracking-wider mb-1"
+                  id="resident-engine-badge">PEOPLE &amp; RESIDENT DIRECTORY</span>
+                <h4 class="text-lg sm:text-xl font-extrabold text-slate-900" id="resident-scenario-title">Digital Tenant
+                  Move-In &amp; KYC Approval — Automated Onboarding Cascade</h4>
+              </div>
+              <div
+                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm text-xs font-semibold text-slate-700">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span><span class="">Active Node
+                  Simulated</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+              <div class="lg:col-span-7 space-y-3" id="resident-timeline-container">
+                <div
+                  class="flex items-start justify-between p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm">
+                  <div class="flex items-start gap-3"><span
+                      class="font-mono text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">00:00</span>
+                    <div>
+                      <div class="text-xs font-bold text-slate-900">Tenant (Flat 402, Tower B)</div>
+                      <div class="text-xs text-slate-500 mt-0.5">Uploads scanned lease agreement, Aadhaar &amp; passport
+                        photo via Resident Web</div>
+                    </div>
+                  </div><span
+                    class="px-2.5 py-1 rounded bg-blue-100 text-blue-700 text-xs font-bold shrink-0">Submitted</span>
+                </div>
+                <div
+                  class="flex items-start justify-between p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm">
+                  <div class="flex items-start gap-3"><span
+                      class="font-mono text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">00:02</span>
+                    <div>
+                      <div class="text-xs font-bold text-slate-900">Primary Owner (App Notification)</div>
+                      <div class="text-xs text-slate-500 mt-0.5">Reviews digital tenancy tenure &amp; applies
+                        cryptographic 1-tap e-sign approval</div>
+                    </div>
+                  </div><span class="px-2.5 py-1 rounded bg-purple-100 text-purple-700 text-xs font-bold shrink-0">Owner
+                    Signed</span>
+                </div>
+                <div
+                  class="flex items-start justify-between p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm">
+                  <div class="flex items-start gap-3"><span
+                      class="font-mono text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">00:05</span>
+                    <div>
+                      <div class="text-xs font-bold text-slate-900">SocMgt Access &amp; Security Controller</div>
+                      <div class="text-xs text-slate-500 mt-0.5">Pushes tenant RFID &amp; ANPR tags to Gate Barrier and
+                        sends Welcome Packet</div>
+                    </div>
+                  </div><span
+                    class="px-2.5 py-1 rounded bg-emerald-100 text-emerald-700 text-xs font-bold shrink-0">Access
+                    Ready</span>
+                </div>
+              </div>
+              <div class="lg:col-span-5">
+                <div
+                  class="bg-slate-950 rounded-2xl p-5 border border-slate-800 shadow-2xl h-full flex flex-col justify-between text-white">
+                  <div class="flex items-center gap-2 text-xs font-bold text-cyan-400 tracking-wider uppercase mb-4">
+                    <span class="material-symbols-outlined text-[16px]">insights</span><span class="">AUTOMATED
+                      EXECUTION TELEMETRY</span>
+                  </div>
+                  <div class="grid grid-cols-3 gap-2 py-2" id="resident-stats-grid">
+                    <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800 text-center">
+                      <div class="text-lg sm:text-xl font-extrabold text-cyan-400" id="resident-stat-1">3 mins</div>
+                      <div class="text-[10px] text-slate-400 mt-0.5 font-medium" id="resident-stat-1-lbl">Turnaround
+                        Time</div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800 text-center">
+                      <div class="text-lg sm:text-xl font-extrabold text-emerald-400" id="resident-stat-2">100%</div>
+                      <div class="text-[10px] text-slate-400 mt-0.5 font-medium" id="resident-stat-2-lbl">KYC &amp; ID
+                        Verified</div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800 text-center">
+                      <div class="text-lg sm:text-xl font-extrabold text-amber-400" id="resident-stat-3">0</div>
+                      <div class="text-[10px] text-slate-400 mt-0.5 font-medium" id="resident-stat-3-lbl">Ghost Badges
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="pt-4 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400 mt-3">
+                    <span class="flex items-center gap-1.5"><span
+                        class="w-2 h-2 rounded-full bg-emerald-400"></span><span id="resident-telemetry-sub"
+                        class="">RBAC active session replication</span></span><span class="font-mono text-cyan-400"
+                      id="resident-latency-tag">Latency: 22ms</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-3xl p-6 sm:p-10 border border-amber-200/70 shadow-xl mb-16" id="security"
+          style="scroll-margin-top: 5rem;">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-6 relative">
+              <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 bg-slate-100">
+                <img alt="Modern friendly security guard at barrier gate with digital tablet"
+                  class="w-full h-full max-h-[500px] object-cover object-center"
+                  src="https://lh3.googleusercontent.com/aida/AEtjO1X9iR5U5l1dGRBljx0IugbtUZGEgKE0MGVNqnMcRNQL2SrVx9_Wsva3_aIukSNf71T9P9TbLVBbzUbpgZTTrK5EMWV3m7zsefqZEh5u1EAbj-sNLsDL5JOTdUfHDCipa1OBgrPRwLOYSMibim3cmq1GBBnSLrjcM_wD8zUCfGAdmPHPbfLPYZyEq9bn6hJIr6NxY2wcO1I3kz3x2MbwOh-yUIIPyvDNMzggYF2KXGSI8ItKUX72c9B1vRk">
+                <!-- Telemetry Overlays -->
+                <div
+                  class="absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md p-3.5 rounded-xl border border-amber-400/40 text-white flex items-center justify-between">
+                  <div class="flex items-center gap-2.5">
+                    <div class="w-9 h-9 rounded-lg bg-amber-500 text-white flex items-center justify-center font-bold">
+                      <span class="material-symbols-outlined text-[20px]">qr_code_scanner</span>
+                    </div>
+                    <div>
+                      <div class="text-xs font-bold text-white flex items-center gap-1.5">
+                        <span class="">Gate North Barrier Terminal</span>
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                      </div>
+                      <div class="text-[11px] text-slate-300">Edge Offline Sync Active • 1.8s Scan</div>
+                    </div>
+                  </div>
+                  <span
+                    class="px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-300 text-xs font-bold border border-emerald-400/30">PASS
+                    VALID</span>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-6 space-y-5">
+              <div class="flex flex-wrap items-center gap-2">
+                <span
+                  class="px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-[15px] text-amber-600">shield_lock</span>
+                  <span class="">PILLAR: SECURITY &amp; ACCESS CONTROL</span>
+                </span>
+                <span class="px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">Merges 4 Core
+                  Gate Modules</span>
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                Unified Perimeter Security &amp; Smart Access Engine
+              </h3>
+              <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+                Sub-2-second verification for residents, pre-approved guests, and daily household staff. Offline-first
+                tablet terminals ensure the society gate never slows down even if broadband flickers.
+              </p>
+              <!-- Merged Modules Pills -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+                <div class="p-2.5 rounded-xl bg-amber-50/50 border border-amber-200/70 text-xs">
+                  <span class="font-bold text-amber-900 block">Mod 11: Gate Security &amp; Access Control</span>
+                  <span class="text-slate-600 text-[11px]">Guard terminal tablet UI &amp; edge SQLite offline
+                    cache</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-amber-50/50 border border-amber-200/70 text-xs">
+                  <span class="font-bold text-amber-900 block">Mod 12: Visitor Pass Pre-Approval</span>
+                  <span class="text-slate-600 text-[11px]">6-digit dynamic PINs &amp; instant WhatsApp QR pass
+                    sharing</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-amber-50/50 border border-amber-200/70 text-xs">
+                  <span class="font-bold text-amber-900 block">Mod 13: Domestic Staff &amp; Vendor Roster</span>
+                  <span class="text-slate-600 text-[11px]">Maids, drivers &amp; delivery multi-flat association
+                    log</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-amber-50/50 border border-amber-200/70 text-xs">
+                  <span class="font-bold text-amber-900 block">Mod 14: Vehicle &amp; RFID Parking Allocation</span>
+                  <span class="text-slate-600 text-[11px]">ANPR number plate lookup &amp; unauthorized bay
+                    detection</span>
+                </div>
+              </div>
+              <!-- Interactive Graphic Badges -->
+              <div class="pt-2 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs">
+                <div class="flex items-center gap-1.5 text-slate-700 font-semibold">
+                  <span class="material-symbols-outlined text-amber-600 text-[18px]">speed</span>
+                  <span class="">Sub-2s Gate Passage Speed</span>
+                </div>
+                <div class="flex items-center gap-1.5 text-slate-700 font-semibold">
+                  <span class="material-symbols-outlined text-emerald-600 text-[18px]">notifications_active</span>
+                  <span class="">Instant Flat Ingress Chime</span>
+                </div>
+                <div class="flex items-center gap-1.5 text-slate-700 font-semibold">
+                  <span class="material-symbols-outlined text-blue-600 text-[18px]">sensors</span>
+                  <span class="">RFID &amp; ANPR Ready</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ========================= SHOWCASE 2: FINANCE, BILLING & ACCOUNTING ========================= -->
+        <div class="bg-white rounded-3xl p-6 sm:p-10 border border-emerald-200/70 shadow-xl mb-16" id="finance"
+          style="scroll-margin-top: 5rem;">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-6 space-y-5 order-2 lg:order-1">
+              <div class="flex flex-wrap items-center gap-2">
+                <span
+                  class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 text-xs font-bold flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-[15px] text-emerald-600">account_balance</span>
+                  <span class="">PILLAR: FINANCE, BILLING &amp; ACCOUNTING</span>
+                </span>
+                <span class="px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">Merges 6 Core
+                  Financial Modules</span>
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                Audit-Grade General Ledger &amp; Automated Financial Engine
+              </h3>
+              <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+                Eliminate disputed maintenance bills, unallocated payments, and delayed reconciliations. Powered by
+                CPA-grade double-entry ledgers, native Razorpay/UPI gateway settlements, multi-tiered expense approval
+                thresholds, and pixel-perfect QuestPDF tax invoicing.
+              </p>
+              <!-- Merged Modules Pills -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+                <div class="p-2.5 rounded-xl bg-emerald-50/50 border border-emerald-200/70 text-xs">
+                  <span class="font-bold text-emerald-950 block">Mod 05: Maintenance Billing &amp; Itemized
+                    Assessment</span>
+                  <span class="text-slate-600 text-[11px]">Flat rate, sq-ft slab formulas, sinking funds, water
+                    utilities &amp; late fines (Draft to Settled)</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-emerald-50/50 border border-emerald-200/70 text-xs">
+                  <span class="font-bold text-emerald-950 block">Mod 06: Digital Payment Gateway Integration</span>
+                  <span class="text-slate-600 text-[11px]">Razorpay, UPI &amp; Net Banking Pay Now with instant GST
+                    receipts &amp; zero-sync ledger updates</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-emerald-50/50 border border-emerald-200/70 text-xs">
+                  <span class="font-bold text-emerald-950 block">Mod 07: Double-Entry Accounting Ledger &amp;
+                    Recon</span>
+                  <span class="text-slate-600 text-[11px]">Standardized residential charts of accounts, member ledgers,
+                    advance pools &amp; MT940 auto-recon</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-emerald-50/50 border border-emerald-200/70 text-xs">
+                  <span class="font-bold text-emerald-950 block">Mod 08: Multi-Level Expense Management</span>
+                  <span class="text-slate-600 text-[11px]">Expenditure vouchers, petty cash claims, PO/PR state machines
+                    routing by threshold</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-emerald-50/50 border border-emerald-200/70 text-xs">
+                  <span class="font-bold text-emerald-950 block">Mod 23: Utility Meter Reading &amp; Variable
+                    Billing</span>
+                  <span class="text-slate-600 text-[11px]">Mobile OCR optical reader for piped gas, electricity, and
+                    tiered water consumption</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-emerald-50/50 border border-emerald-200/70 text-xs">
+                  <span class="font-bold text-emerald-950 block">Mod 28: QuestPDF Report &amp; ClosedXML Engine</span>
+                  <span class="text-slate-600 text-[11px]">Pixel-perfect A4 tax invoices and ClosedXML Excel sheets
+                    generated in milliseconds</span>
+                </div>
+              </div>
+              <!-- Key Highlights & Badges -->
+              <div class="pt-2 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs">
+                <div class="flex items-center gap-1.5 text-emerald-700 font-semibold">
+                  <span class="material-symbols-outlined text-emerald-600 text-[18px]">verified</span>
+                  <span class="">100% Tax &amp; GST Compliant</span>
+                </div>
+                <div class="flex items-center gap-1.5 text-slate-700 font-semibold">
+                  <span class="material-symbols-outlined text-blue-600 text-[18px]">fact_check</span>
+                  <span class="">CPA Audit Ready</span>
+                </div>
+                <div class="flex items-center gap-1.5 text-slate-700 font-semibold">
+                  <span class="material-symbols-outlined text-teal-600 text-[18px]">sync_alt</span>
+                  <span class="">Instant One-Click Reconciliation</span>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-6 relative order-1 lg:order-2">
+              <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 bg-slate-100">
+                <img
+                  alt="Professional community estate manager or board trustee reviewing community maintenance and financials on iPad"
+                  class="w-full h-full max-h-[500px] object-cover object-center"
+                  src="https://lh3.googleusercontent.com/aida/AEtjO1XNgq64tRfLaTcSvdfr23YJij6AojIeMVuwFvBL-LWnHk17qHRwfdR8N0xRBLgLvbsIq2pWip8Q6YnY0hA6kXwBqR3GanUbOimZDIMH8QjVr9h8iR5OTZ-mooZUvIvsyAjknrsMFBbGljyprZpr6eDnAjVI2YkJX-8cYA2t1rqo7kEeP7nhyDv-Z8ovu4ZylSeB3ji9MmopU4V_qOj4pAUfYG3IvvytIW4OIi_dDdTZzTcqoo_EQBuKNIY">
+                <div
+                  class="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-xl shadow-lg border border-slate-200 flex items-center gap-2">
+                  <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span class="text-xs font-bold text-slate-900">100% CPA Audit Ready</span>
+                </div>
+                <div
+                  class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-4 rounded-xl shadow-xl border border-slate-200">
+                  <div class="flex items-center justify-between text-xs font-bold text-slate-800 mb-1.5">
+                    <span class="">Real-Time Bank Reconciliation</span>
+                    <span class="text-emerald-600 font-mono">₹48,20,500 Cleared</span>
+                  </div>
+                  <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden flex">
+                    <div class="bg-blue-600 h-full" style="width: 55%"></div>
+                    <div class="bg-emerald-500 h-full" style="width: 35%"></div>
+                    <div class="bg-purple-500 h-full" style="width: 10%"></div>
+                  </div>
+                  <div class="flex justify-between text-[10px] text-slate-500 mt-1 font-semibold">
+                    <span class="">Reserves: 55%</span>
+                    <span class="">Operating: 35%</span>
+                    <span class="">Sinking Fund: 10%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white rounded-3xl p-6 sm:p-10 border border-emerald-200/80 shadow-xl mb-16 glow-emerald"
+          id="billing-cascade-engine">
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100/80 border border-blue-200 text-blue-700 text-xs font-bold">
+              <span class="material-symbols-outlined text-[16px] text-blue-600">hub</span><span class="">LIVE
+                OPERATIONAL CASCADE MATRIX</span>
+            </div>
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span><span class="">Interactive Engine
+                Ready</span>
+            </div>
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight mb-2">Experience
+            the Billing &amp; Assessment Cascade in Real Time.</h3>
+          <p class="text-sm sm:text-base text-slate-600 max-w-4xl leading-relaxed mb-8">Generates recurring monthly or
+            quarterly maintenance invoices based on flat rates, per-sqft formulas, or tiered charges. Itemizes charges
+            including core maintenance, water utilities, parking charges, late payment surcharges, and prior dues.
+            Tracks billing lifecycle states from Draft and Generated through to Partially Paid, Settled, and Overdue.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 mb-8" id="billing-scenario-tabs"><button
+              onclick="switchBillingScenario(0)"
+              class="scenario-billing-tab text-left p-4 rounded-2xl border-2 transition-all cursor-pointer border-emerald-500 bg-emerald-50/60 shadow-sm"
+              data-index="0">
+              <div class="flex items-center justify-between mb-2">
+                <div class="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center"><span
+                    class="material-symbols-outlined text-[20px]">electric_meter</span></div><span
+                  class="text-[11px] font-bold text-emerald-800 uppercase tracking-wider">Scenario 01</span>
+              </div>
+              <div class="text-sm font-bold text-slate-900">Tiered Utility &amp; Per-Sqft Auto-Generation</div>
+              <div class="text-xs text-slate-500 mt-1">Formula-based monthly invoice batch dispatch</div>
+            </button><button onclick="switchBillingScenario(1)"
+              class="scenario-billing-tab text-left p-4 rounded-2xl border-2 transition-all cursor-pointer border-slate-200 hover:border-slate-300 bg-slate-50/50"
+              data-index="1">
+              <div class="flex items-center justify-between mb-2">
+                <div class="w-9 h-9 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center"><span
+                    class="material-symbols-outlined text-[20px]">payments</span></div><span
+                  class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Scenario 02</span>
+              </div>
+              <div class="text-sm font-bold text-slate-900">Razorpay / UPI Instant Auto-Settlement</div>
+              <div class="text-xs text-slate-500 mt-1">Zero-reconciliation ledger credit &amp; GST receipt</div>
+            </button><button onclick="switchBillingScenario(2)"
+              class="scenario-billing-tab text-left p-4 rounded-2xl border-2 transition-all cursor-pointer border-slate-200 hover:border-slate-300 bg-slate-50/50"
+              data-index="2">
+              <div class="flex items-center justify-between mb-2">
+                <div class="w-9 h-9 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center"><span
+                    class="material-symbols-outlined text-[20px]">warning</span></div><span
+                  class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Scenario 03</span>
+              </div>
+              <div class="text-sm font-bold text-slate-900">Partial Payment &amp; Late Surcharge Escalation</div>
+              <div class="text-xs text-slate-500 mt-1">Defaulter notification &amp; grace-period ledger posting</div>
+            </button><button onclick="switchBillingScenario(3)"
+              class="scenario-billing-tab text-left p-4 rounded-2xl border-2 transition-all cursor-pointer border-slate-200 hover:border-slate-300 bg-slate-50/50"
+              data-index="3">
+              <div class="flex items-center justify-between mb-2">
+                <div class="w-9 h-9 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center"><span
+                    class="material-symbols-outlined text-[20px]">picture_as_pdf</span></div><span
+                  class="text-[11px] font-bold text-slate-500 uppercase tracking-wider">Scenario 04</span>
+              </div>
+              <div class="text-sm font-bold text-slate-900">Quarterly Audit Pack &amp; QuestPDF Generation</div>
+              <div class="text-xs text-slate-500 mt-1">CPA export, bank reco &amp; ClosedXML ledger sync</div>
+            </button></div>
+          <div class="bg-slate-50/80 rounded-2xl border border-slate-200 p-5 sm:p-7">
+            <div class="flex flex-wrap items-center justify-between gap-3 pb-5 border-b border-slate-200 mb-6">
+              <div><span
+                  class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-[11px] font-bold uppercase tracking-wider mb-1"
+                  id="billing-engine-badge">MAINTENANCE BILLING &amp; ITEM ENGINE</span>
+                <h4 class="text-lg sm:text-xl font-extrabold text-slate-900" id="billing-scenario-title">Tiered Utility
+                  &amp; Per-Sqft Auto-Generation — Automated Billing Cascade</h4>
+              </div>
+              <div
+                class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm text-xs font-semibold text-slate-700">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span><span class="">Active Node
+                  Simulated</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+              <div class="lg:col-span-7 space-y-3" id="billing-timeline-container">
+                <div
+                  class="flex items-start justify-between p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm">
+                  <div class="flex items-start gap-3"><span
+                      class="font-mono text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">00:00</span>
+                    <div>
+                      <div class="text-xs font-bold text-slate-900">Billing Daemon Service</div>
+                      <div class="text-xs text-slate-500 mt-0.5">Batches 320 units; ingests piped gas, water sub-meter
+                        &amp; sqft formulas</div>
+                    </div>
+                  </div><span
+                    class="px-2.5 py-1 rounded bg-blue-100 text-blue-700 text-xs font-bold shrink-0">Generated</span>
+                </div>
+                <div
+                  class="flex items-start justify-between p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm">
+                  <div class="flex items-start gap-3"><span
+                      class="font-mono text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">00:01</span>
+                    <div>
+                      <div class="text-xs font-bold text-slate-900">SocMgt Tax &amp; Tariff Calculator</div>
+                      <div class="text-xs text-slate-500 mt-0.5">Computes 18% GST on non-exempt components &amp; applies
+                        advance dues offsets</div>
+                    </div>
+                  </div><span
+                    class="px-2.5 py-1 rounded bg-teal-100 text-teal-700 text-xs font-bold shrink-0">Auto-Itemized</span>
+                </div>
+                <div
+                  class="flex items-start justify-between p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm">
+                  <div class="flex items-start gap-3"><span
+                      class="font-mono text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">00:03</span>
+                    <div>
+                      <div class="text-xs font-bold text-slate-900">QuestPDF &amp; ClosedXML Microservice</div>
+                      <div class="text-xs text-slate-500 mt-0.5">Renders 320 A4 tax receipts with dynamic QR code &amp;
+                        dispatches via WhatsApp API</div>
+                    </div>
+                  </div><span
+                    class="px-2.5 py-1 rounded bg-emerald-100 text-emerald-700 text-xs font-bold shrink-0">Dispatched</span>
+                </div>
+              </div>
+              <div class="lg:col-span-5">
+                <div
+                  class="bg-slate-950 rounded-2xl p-5 border border-slate-800 shadow-2xl h-full flex flex-col justify-between text-white">
+                  <div class="flex items-center gap-2 text-xs font-bold text-cyan-400 tracking-wider uppercase mb-4">
+                    <span class="material-symbols-outlined text-[16px]">insights</span><span class="">AUTOMATED
+                      EXECUTION TELEMETRY</span>
+                  </div>
+                  <div class="grid grid-cols-3 gap-2 py-2" id="billing-stats-grid">
+                    <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800 text-center">
+                      <div class="text-lg sm:text-xl font-extrabold text-cyan-400" id="billing-stat-1">4.2s</div>
+                      <div class="text-[10px] text-slate-400 mt-0.5 font-medium" id="billing-stat-1-lbl">320 Invoices
+                        Done</div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800 text-center">
+                      <div class="text-lg sm:text-xl font-extrabold text-emerald-400" id="billing-stat-2">100%</div>
+                      <div class="text-[10px] text-slate-400 mt-0.5 font-medium" id="billing-stat-2-lbl">Auto-Reconciled
+                      </div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-slate-900/90 border border-slate-800 text-center">
+                      <div class="text-lg sm:text-xl font-extrabold text-amber-400" id="billing-stat-3">₹0</div>
+                      <div class="text-[10px] text-slate-400 mt-0.5 font-medium" id="billing-stat-3-lbl">Discrepancy
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="pt-4 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400 mt-3">
+                    <span class="flex items-center gap-1.5"><span
+                        class="w-2 h-2 rounded-full bg-emerald-400"></span><span id="billing-telemetry-sub"
+                        class="">Real-time webhook replication</span></span><span class="font-mono text-cyan-400"
+                      id="billing-latency-tag">Latency: 14ms</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ========================= SHOWCASE 3: FACILITIES, ASSETS & AMC ========================= -->
+        <div class="bg-white rounded-3xl p-6 sm:p-10 border border-teal-200/70 shadow-xl mb-16" id="infrastructure"
+          style="scroll-margin-top: 5rem;">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-6 relative">
+              <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 bg-slate-100">
+                <img
+                  alt="Community maintenance technician inspecting solar inverter and electrical substation with digital tablet"
+                  class="w-full h-full max-h-[500px] object-cover object-center"
+                  src="https://lh3.googleusercontent.com/aida/AEtjO1Vaa977_Vkh0SzahIWvnfpB0yNbXF8Akxf4bVxdIBdRYXMnUE35UtStyF1hLvDDlqtlu8rg6D3EqPFhfZlGvmfo7eOjl6sk1ZQlRmCfJU6804T768UhvkibaFfAd7h6RCD2rh5fHtXaq9hUsbnmP3S1TY2jNoqXJrK2ZWtZKsdw_xIv8wuGSIQMBB5AheuyttTR-gJMXLLChYWcirNTHuUpcsQNzBy7Yx2YNM9QLX_F8oDCpgr4au7mxg">
+                <div
+                  class="absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md p-4 rounded-xl text-white flex items-center justify-between border border-slate-700">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg bg-teal-500/20 text-teal-400 flex items-center justify-center">
+                      <span class="material-symbols-outlined text-[22px]">solar_power</span>
+                    </div>
+                    <div>
+                      <div class="text-sm font-bold text-white">Solar Substation &amp; Pump AMC</div>
+                      <div class="text-xs text-slate-300">QR Checkpoint #4 Validated</div>
+                    </div>
+                  </div>
+                  <span
+                    class="px-2.5 py-1 rounded bg-teal-500/20 text-teal-300 text-xs font-bold border border-teal-400/30">99.98%
+                    UPTIME</span>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-6 space-y-5">
+              <div class="flex flex-wrap items-center gap-2">
+                <span
+                  class="px-3 py-1 rounded-full bg-teal-100 text-teal-900 text-xs font-bold flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-[15px] text-teal-600">precision_manufacturing</span>
+                  <span class="">PILLAR: FACILITIES, ASSETS &amp; PREVENTATIVE MAINTENANCE</span>
+                </span>
+                <span class="px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">Merges 3 Asset
+                  &amp; Facility Modules</span>
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                Protect Common Infrastructure. Eradicate Clubhouse Downtime.
+              </h3>
+              <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+                Keep lifts, diesel generators, water filtration plants, and sports facilities running without
+                disruption. Connect resident complaints directly to physical assets with auto-escalating SLAs and
+                verified photo completion proofs.
+              </p>
+              <!-- Merged Modules Pills -->
+              <div class="space-y-2.5 pt-1">
+                <div
+                  class="p-3 rounded-xl bg-teal-50/50 border border-teal-200/70 text-xs flex items-center justify-between">
+                  <div>
+                    <span class="font-bold text-teal-950 block">Mod 09: Service Requests &amp; Complaint Management
+                      (Helpdesk)</span>
+                    <span class="text-slate-600 text-[11px]">Photo attachments, priority tagging
+                      (Plumbing/Electrical/Lift/Emergency), 4-stage lifecycle: Open → Assigned → Resolved → Photo
+                      Verified</span>
+                  </div>
+                  <span class="material-symbols-outlined text-teal-600 text-[20px] shrink-0 ml-3">support_agent</span>
+                </div>
+                <div
+                  class="p-3 rounded-xl bg-teal-50/50 border border-teal-200/70 text-xs flex items-center justify-between">
+                  <div>
+                    <span class="font-bold text-teal-950 block">Mod 10: Preventive Maintenance &amp; Asset Lifecycle
+                      (Work Orders &amp; AMC)</span>
+                    <span class="text-slate-600 text-[11px]">Routines for pumps, lifts, generators; spare parts
+                      inventory, consumable usage logs, contract penalty tracking &amp; QR checkpoints</span>
+                  </div>
+                  <span
+                    class="material-symbols-outlined text-teal-600 text-[20px] shrink-0 ml-3">precision_manufacturing</span>
+                </div>
+                <div
+                  class="p-3 rounded-xl bg-teal-50/50 border border-teal-200/70 text-xs flex items-center justify-between">
+                  <div>
+                    <span class="font-bold text-teal-950 block">Mod 15: Facility &amp; Amenity Booking Management</span>
+                    <span class="text-slate-600 text-[11px]">Clubhouse, pool, tennis court reservations with hourly
+                      time-slots, max occupancy limits, refundable UPI deposits, and zero overlapping bookings</span>
+                  </div>
+                  <span class="material-symbols-outlined text-teal-600 text-[20px] shrink-0 ml-3">sports_tennis</span>
+                </div>
+              </div>
+              <!-- Key Highlights / Badges -->
+              <div class="pt-2 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs">
+                <div class="flex items-center gap-1.5 text-teal-700 font-semibold">
+                  <span class="material-symbols-outlined text-teal-600 text-[18px]">verified</span>
+                  <span class="">99.98% Monitored Asset Uptime</span>
+                </div>
+                <div class="flex items-center gap-1.5 text-slate-700 font-semibold">
+                  <span class="material-symbols-outlined text-amber-600 text-[18px]">qr_code_scanner</span>
+                  <span class="">QR Substation Workorders</span>
+                </div>
+                <div class="flex items-center gap-1.5 text-slate-700 font-semibold">
+                  <span class="material-symbols-outlined text-blue-600 text-[18px]">event_available</span>
+                  <span class="">Zero Slot Conflicts</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ========================= SHOWCASE 4: RESIDENT LIFE & COMMUNITY ENGAGEMENT ========================= -->
+        <div class="bg-white rounded-3xl p-6 sm:p-10 border border-rose-200/70 shadow-xl mb-16" id="resident-life"
+          style="scroll-margin-top: 5rem;">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-6 space-y-5 order-2 lg:order-1">
+              <div class="flex flex-wrap items-center gap-2">
+                <span
+                  class="px-3 py-1 rounded-full bg-rose-100 text-rose-900 text-xs font-bold flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-[15px] text-rose-600">groups</span>
+                  <span class="">PILLAR: RESIDENT LIFE &amp; COMMUNITY ENGAGEMENT</span>
+                </span>
+                <span class="px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">Merges 7 Resident
+                  Social Modules</span>
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                A Connected Neighborhood. Zero Spam, Total Privacy.
+              </h3>
+              <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+                Elevate daily community living while guaranteeing absolute phone privacy. Provide residents with
+                verified interest channels, hyper-local classifieds, smart notification quiet hours, secret polls, and
+                self-serve knowledge base articles.
+              </p>
+              <!-- Merged Modules Pills -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+                <div class="p-2.5 rounded-xl bg-rose-50/50 border border-rose-200/70 text-xs">
+                  <span class="font-bold text-rose-950 block">Mod 18: Official Announcements &amp; Circulars</span>
+                  <span class="text-slate-600 text-[11px]">Emergency, High-Priority, and General circulars with
+                    read-receipt audit &amp; attachments</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-rose-50/50 border border-rose-200/70 text-xs">
+                  <span class="font-bold text-rose-950 block">Mod 19: Real-Time Resident Chat Hub</span>
+                  <span class="text-slate-600 text-[11px]">Direct community and tower channels with masked phone numbers
+                    and zero private leaks</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-rose-50/50 border border-rose-200/70 text-xs">
+                  <span class="font-bold text-rose-950 block">Mod 20: Community Discussions Feed</span>
+                  <span class="text-slate-600 text-[11px]">Filtered streams: Events, Advice, Recommendations, Lost &amp;
+                    Found with threaded replies</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-rose-50/50 border border-rose-200/70 text-xs">
+                  <span class="font-bold text-rose-950 block">Mod 21: Community Polls &amp; Secret Ballots</span>
+                  <span class="text-slate-600 text-[11px]">1-vote-per-flat secret or public ballots with live
+                    participation and real-time percentage bars</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-rose-50/50 border border-rose-200/70 text-xs">
+                  <span class="font-bold text-rose-950 block">Mod 22: Multi-Channel Notification Engine</span>
+                  <span class="text-slate-600 text-[11px]">Push, WhatsApp, SMS &amp; Email delivery switches with
+                    granular quiet hours controls</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-rose-50/50 border border-rose-200/70 text-xs">
+                  <span class="font-bold text-rose-950 block">Mod 25 &amp; 26: Marketplace &amp; Knowledge Base</span>
+                  <span class="text-slate-600 text-[11px]">Verified P2P resident buy/sell + instant self-serve FAQs for
+                    waste, EV charging, and pet rules</span>
+                </div>
+              </div>
+              <!-- Key Highlights / Badges -->
+              <div class="pt-2 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs">
+                <div class="flex items-center gap-1.5 text-rose-800 font-bold">
+                  <span class="material-symbols-outlined text-[16px] text-rose-600">verified</span>
+                  <span class="">100% Verified Resident Only</span>
+                </div>
+                <div class="flex items-center gap-1.5 text-slate-700 font-semibold">
+                  <span class="material-symbols-outlined text-[16px] text-purple-600">visibility_off</span>
+                  <span class="">Privacy-First Architecture</span>
+                </div>
+                <div class="flex items-center gap-1.5 text-slate-700 font-semibold">
+                  <span class="material-symbols-outlined text-[16px] text-emerald-600">notifications_active</span>
+                  <span class="">Real-Time Ingress &amp; Alert Chimes</span>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-6 relative order-1 lg:order-2">
+              <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 bg-slate-100">
+                <img
+                  alt="Happy family walking with golden retriever through sunny luxury modern residential apartment community courtyard checking resident app"
+                  class="w-full h-full max-h-[500px] object-cover object-center"
+                  src="https://lh3.googleusercontent.com/aida/AEtjO1VsTtfcr0l85OPrgVSmCKauRfOVXmM_DIC4EEsJo5-baaxWYmYf1MrY0oTif0I7JqszDnBOZ-4cerwh89m20Kn6jIKGneGw6u3zn1vVqvspQzRdggnc_gR0yPDvvtOEdrqABFwr99-Z5Tka1MzaIdNA32cFnwYiCxR6cLRSxy-bkd7eSx7gNUC5dnnYewQkKA440IjOwXRiW3ux0Jr7YLUzs1R6sPhVRBw4ROhYRKDTXWi8jtnSnR01CEA">
+                <div
+                  class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md p-3.5 rounded-xl shadow-lg border border-slate-200 flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <div
+                      class="w-8 h-8 rounded-full bg-rose-100 text-rose-600 flex items-center justify-center font-bold text-xs">
+                      4.9★</div>
+                    <span class="text-xs font-bold text-slate-900">Highest Resident App Adoption in Class</span>
+                  </div>
+                  <span class="text-xs font-bold text-blue-600">iOS &amp; Android</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ========================= SHOWCASE 5: GOVERNANCE, PROCESS & COMPLIANCE ========================= -->
+        <div class="bg-white rounded-3xl p-6 sm:p-10 border border-purple-200/70 shadow-xl mb-6" id="governance"
+          style="scroll-margin-top: 5rem;">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-6 relative">
+              <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-200 bg-slate-100">
+                <img alt="Executive committee board and trustees collaborating around conference table"
+                  class="w-full h-full max-h-[500px] object-cover object-center"
+                  src="https://lh3.googleusercontent.com/aida/AEtjO1U-n-oPoFwdjxM56TmWhakvg4757oeL2AmxQeR5RgavK6TDIy2GJshI8uIBlM_4b9iN2inVIr4EkA47VZkUUI73FtE08gOE9VtazcU0Esgkb1vM34USynYgITL3gCvK0jJBbhCVQtItvSHHDOWjNEtoMm4vUGHqziDJM8Uv39zL_p2iK4xxMjyQfNArfKjIib_16IVV8fDaqDez-fgnr15zJvKegwVQUlO1VSNdtt0U6rWykM6LJmZ5vyQ">
+                <div
+                  class="absolute top-4 left-4 bg-purple-900/90 backdrop-blur-md text-white px-3.5 py-1.5 rounded-xl border border-purple-400/40 text-xs font-bold flex items-center gap-1.5 shadow-lg">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  <span class="">E-QUORUM ACTIVE: 84.6% REPRESENTED</span>
+                </div>
+              </div>
+            </div>
+            <div class="lg:col-span-6 space-y-5">
+              <div class="flex flex-wrap items-center gap-2">
+                <span
+                  class="px-3 py-1 rounded-full bg-purple-100 text-purple-900 text-xs font-bold flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-[15px] text-purple-600">gavel</span>
+                  <span class="">PILLAR: GOVERNANCE, DEMOCRATIC PROCESS &amp; COMPLIANCE</span>
+                </span>
+                <span class="px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-medium">Merges Governance
+                  &amp; Multi-Tenant Core</span>
+              </div>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                Legally Bulletproof Decisions. Zero Missing Paper Records.
+              </h3>
+              <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+                Eliminate legal vulnerabilities and committee disputes. Secure perpetual legal documents, manage AGM/EGM
+                signed minutes, conduct tamper-proof secret ballot voting, and process renovation NOCs with strict
+                compliance.
+              </p>
+              <!-- Merged Modules Pills -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+                <div class="p-2.5 rounded-xl bg-purple-50/50 border border-purple-200/70 text-xs">
+                  <span class="font-bold text-purple-950 block">Mod 16: Digital Document Vault</span>
+                  <span class="text-slate-600 text-[11px]">Role-restricted AWS S3 encrypted bylaws, blueprints, title
+                    deeds &amp; fire safety NOCs</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-purple-50/50 border border-purple-200/70 text-xs">
+                  <span class="font-bold text-purple-950 block">Mod 17: Committee Governance &amp; MOM</span>
+                  <span class="text-slate-600 text-[11px]">AGM/SGM agenda builder, digital quorum tracker, attendance
+                    &amp; signed minutes archive</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-purple-50/50 border border-purple-200/70 text-xs">
+                  <span class="font-bold text-purple-950 block">Mod 24: Architectural Renovation NOC</span>
+                  <span class="text-slate-600 text-[11px]">Move-in/Move-out NOCs, interior security deposits, property
+                    sale no-dues verification</span>
+                </div>
+                <div class="p-2.5 rounded-xl bg-purple-50/50 border border-purple-200/70 text-xs">
+                  <span class="font-bold text-purple-950 block">Mod 01-04: Multi-Tenant Hierarchy</span>
+                  <span class="text-slate-600 text-[11px]">Dynamic workspace context switcher: Super Admin, Manager,
+                    Owner, Resident, Guard</span>
+                </div>
+              </div>
+              <!-- Key Highlights / Badges -->
+              <div class="pt-2 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs">
+                <div class="flex items-center gap-1.5 text-purple-900 font-semibold">
+                  <span class="material-symbols-outlined text-purple-600 text-[18px]">description</span>
+                  <span class="">Immutable PDF Minutes</span>
+                </div>
+                <div class="flex items-center gap-1.5 text-slate-700 font-semibold">
+                  <span class="material-symbols-outlined text-emerald-600 text-[18px]">how_to_reg</span>
+                  <span class="">Quorum Verification</span>
+                </div>
+                <div class="flex items-center gap-1.5 text-slate-700 font-semibold">
+                  <span class="material-symbols-outlined text-blue-600 text-[18px]">lock</span>
+                  <span class="">Cryptographic Resolution Audit</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SECTION 4: INTERACTIVE SCALE ROI CALCULATOR -->
+    <section class="py-20 bg-white border-t border-slate-200" id="calculator" style="scroll-margin-top: 5rem;">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-800 text-xs font-bold mb-3">
+            <span class="material-symbols-outlined text-[16px] text-blue-600">calculate</span>
+            <span class="">SOCIETY SCALE ESTIMATOR</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+            Estimate Operational Impact for Your Society
+          </h2>
+          <p class="text-base text-slate-600 mt-2">
+            Slide to your total apartment or villa unit count to calculate monthly automated billing volume, gate pass
+            transactions, and recovered administrative hours.
+          </p>
+        </div>
+        <div class="max-w-4xl mx-auto bg-[#f8f9ff] rounded-3xl p-6 sm:p-10 border border-blue-100 shadow-xl">
+          <div class="mb-8">
+            <div class="flex items-center justify-between mb-2">
+              <label class="font-bold text-slate-900 text-base" for="unit-range">Total Society Units / Flats:</label>
+              <span
+                class="text-xl font-extrabold px-4 py-1 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl shadow-md"
+                id="calc-units-badge">320 Units</span>
+            </div>
+            <input aria-label="Adjust residential units"
+              class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-blue-600 my-4"
+              id="unit-range" max="1500" min="50" oninput="updateCalculator(this.value)" step="10" type="range"
+              value="320">
+            <div class="flex justify-between text-xs text-slate-500 font-semibold">
+              <span class="">Boutique RWA (50 units)</span>
+              <span class="">Mid-Rise Society (350 units)</span>
+              <span class="">Township Estate (1,500+ units)</span>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-5 pt-4 border-t border-slate-200">
+            <div class="p-4 rounded-2xl bg-white border border-blue-100 text-center shadow-sm">
+              <div class="w-10 h-10 rounded-xl bg-blue-100 text-blue-600 mx-auto flex items-center justify-center mb-2">
+                <span class="material-symbols-outlined text-[24px]">receipt</span>
+              </div>
+              <div class="text-2xl font-extrabold text-slate-900" id="calc-invoices">320</div>
+              <div class="text-xs font-bold text-blue-800 mt-1">Monthly Auto Invoices</div>
+              <div class="text-[11px] text-slate-500 mt-1">Generated via QuestPDF Engine</div>
+            </div>
+            <div class="p-4 rounded-2xl bg-white border border-amber-100 text-center shadow-sm">
+              <div
+                class="w-10 h-10 rounded-xl bg-amber-100 text-amber-600 mx-auto flex items-center justify-center mb-2">
+                <span class="material-symbols-outlined text-[24px]">qr_code_scanner</span>
+              </div>
+              <div class="text-2xl font-extrabold text-slate-900" id="calc-passes">4,800</div>
+              <div class="text-xs font-bold text-amber-800 mt-1">Monthly Visitor Passes</div>
+              <div class="text-[11px] text-slate-500 mt-1">Sub-2s Guard Tablet Scans</div>
+            </div>
+            <div class="p-4 rounded-2xl bg-white border border-emerald-100 text-center shadow-sm">
+              <div
+                class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-600 mx-auto flex items-center justify-center mb-2">
+                <span class="material-symbols-outlined text-[24px]">schedule</span>
+              </div>
+              <div class="text-2xl font-extrabold text-emerald-600" id="calc-hours">160 hrs</div>
+              <div class="text-xs font-bold text-emerald-800 mt-1">Admin Hours Reclaimed</div>
+              <div class="text-[11px] text-slate-500 mt-1">Monthly committee time saved</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SECTION 6: LEAD CAPTURE & BOOK A DEMO FORM -->
+    <section class="py-20 bg-gradient-to-br from-slate-900 via-blue-950 to-slate-950 text-white" id="book-demo">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-6 space-y-6">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 text-blue-300 text-xs font-bold border border-blue-400/30">
+              <span class="material-symbols-outlined text-[16px]">handshake</span>
+              <span class="">GET STARTED WITH SOCMGT</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight">
+              Ready to modernise your community?
+            </h2>
+            <p class="text-base text-slate-300 leading-relaxed">
+              Schedule a personalized 30-minute system walkthrough. Our residential onboarding team will demonstrate how
+              your society's specific blocks, assessment rules, and gate terminals map into the 6 native solution
+              suites.
+            </p>
+            <div class="space-y-3 pt-2 text-xs text-slate-300">
+              <div class="flex items-center gap-3">
+                <span
+                  class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">✓</span>
+                <span class="">Free historical accounting &amp; resident roster data migration included</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span
+                  class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">✓</span>
+                <span class="">Hardware compatibility check for your existing gate boom barriers &amp; CCTV</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <span
+                  class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">✓</span>
+                <span class="">Dedicated relationship manager &amp; staff on-premise training</span>
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-6 bg-white rounded-3xl p-6 sm:p-8 text-slate-900 shadow-2xl">
+            <form class="space-y-4" id="lead-form" onsubmit="handleDemoSubmit(event)">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1" for="lead-name">Your Full Name *</label>
+                  <input
+                    class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs font-medium focus:outline-none focus:border-blue-600"
+                    id="lead-name" placeholder="e.g. Rajesh Sharma" required="" type="text">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1" for="lead-phone">Mobile / WhatsApp
+                    *</label>
+                  <input
+                    class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs font-medium focus:outline-none focus:border-blue-600"
+                    id="lead-phone" placeholder="+91 98765 43210" required="" type="tel">
+                </div>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1" for="lead-role">Your Role *</label>
+                  <select
+                    class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs font-medium focus:outline-none focus:border-blue-600"
+                    id="lead-role">
+                    <option>Management Committee President</option>
+                    <option>Society Treasurer / Board CFO</option>
+                    <option>Estate / Facility Manager</option>
+                    <option>Developer / Asset Builder</option>
+                    <option>Resident Owner</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-slate-700 mb-1" for="lead-units">Total Society Units
+                    *</label>
+                  <select
+                    class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs font-medium focus:outline-none focus:border-blue-600"
+                    id="lead-units">
+                    <option>50 - 150 Units</option>
+                    <option>151 - 400 Units</option>
+                    <option>401 - 1,000 Units</option>
+                    <option>1,000+ Units (Master Township)</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1" for="lead-society">Society / Apartment Name
+                  *</label>
+                <input
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs font-medium focus:outline-none focus:border-blue-600"
+                  id="lead-society" placeholder="e.g. Palm Meadows Owners Association" required="" type="text">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 mb-1" for="lead-city">City &amp; State *</label>
+                <input
+                  class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs font-medium focus:outline-none focus:border-blue-600"
+                  id="lead-city" placeholder="e.g. Bengaluru, Karnataka" required="" type="text">
+              </div>
+              <div class="pt-2">
+                <button
+                  class="w-full py-3.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold text-sm shadow-lg shadow-blue-500/25 hover:from-blue-700 hover:to-indigo-700 transition-all flex items-center justify-center gap-2"
+                  id="submit-btn" type="submit">
+                  <span class="">Schedule Society Consultation</span>
+                  <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                </button>
+              </div>
+              <div
+                class="hidden p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs font-semibold text-center"
+                id="form-success">
+                Thank you! Your society consultation request has been received. Our implementation specialist will
+                contact you within 2 business hours.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- FOOTER -->
+  <footer class="w-full bg-slate-950 text-white pt-16 pb-10 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-2">
+            <img alt="SocMgt Logo" class="h-9 w-9 object-contain rounded-md"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBU_Zg28t8Le4mjfr1m496cTkBTLZx5BX85p82mQAzKCfAUs3O3RKdhSU2Zc-Nk5gXDuz7KvV8E3FB0NfY78JpXYpn3awHOt35C4o38sWwHf3XwjuAAAsGfJdcb8-kyiU8RrQKEEHZ4lAm5xCkdubDkeyKQDZhdcpDGdZnC83XeJC_E7fQi869TUpr4Qj7zfPr8WcwYL5aoq9yP3X2etwudvH8-aao71QiyLKiMIb8trweemRxLFf2iLbxd5rwv9PinOw">
+            <span class="text-xl font-extrabold tracking-tight">Soc<span class="text-blue-500">Mgt</span></span>
+          </div>
+          <p class="text-xs text-slate-400 max-w-sm leading-relaxed">
+            One Platform to Run Your Entire Community. Engineered for residential welfare associations, high-rise
+            condominiums, gated townships, and enterprise property portfolios.
+          </p>
+          <div class="flex items-center gap-2 text-xs text-slate-400 pt-2">
+            <span class="material-symbols-outlined text-[18px]">lock</span>
+            <span class="">Bank-grade 256-bit SSL • SOC2 Type II Certified • GDPR Compliant</span>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">5 Solution Pillars</h4>
+          <ul class="space-y-2 text-xs text-slate-400 font-medium">
+            <li class=""><a class="hover:text-white transition-colors" href="#suite-1">Perimeter &amp; Access
+                Control</a></li>
+            <li class=""><a class="hover:text-white transition-colors" href="#suite-2">Institutional Finance Core</a>
+            </li>
+            <li class=""><a class="hover:text-white transition-colors" href="#suite-3">Assets &amp; Smart Facilities</a>
+            </li>
+            <li class=""><a class="hover:text-white transition-colors" href="#suite-4">Resident Life &amp; Commerce</a>
+            </li>
+            <li class=""><a class="hover:text-white transition-colors" href="#suite-5">Governance &amp; Document
+                Vault</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">Ecosystem &amp; Tech</h4>
+          <ul class="space-y-2 text-xs text-slate-400 font-medium">
+            <li class=""><a class="hover:text-white transition-colors" href="#architecture-map">System Topology
+                Diagram</a></li>
+            <li class=""><a class="hover:text-white transition-colors" href="#suite-2">Razorpay &amp; UPI
+                Integrations</a></li>
+            <li class=""><a class="hover:text-white transition-colors" href="#suite-1">ANPR &amp; RFID Barrier Gate</a>
+            </li>
+            <li class=""><a class="hover:text-white transition-colors" href="#suite-5">Document Vault &amp;
+                ClosedXML</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold uppercase tracking-wider text-slate-300 mb-3">Company</h4>
+          <ul class="space-y-2 text-xs text-slate-400 font-medium">
+            <li class=""><a class="hover:text-white transition-colors" href="#book-demo">Request Onboarding</a></li>
+            <li class=""><a class="hover:text-white transition-colors" href="#calculator">Scale ROI Calculator</a></li>
+            <li class=""><a class="hover:text-white transition-colors" href="#">Security Whitepaper</a></li>
+            <li class=""><a class="hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+            <li class=""><a class="hover:text-white transition-colors" href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div
+        class="pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <p class="">© 2025 SocMgt Technologies Inc. All 29 Modules Verified in 6 Solution Suites.</p>
+        <div class="flex items-center gap-4">
+          <span class="">SaaS Platform Status: <strong class="text-emerald-400 font-bold">Operational</strong></span>
+          <span class="">•</span>
+          <span class="">Cloud Telemetry: <strong>24ms</strong></span>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- CLIENT-SIDE SCRIPT: CALCULATOR & FORM -->
+  <script>
+    // 1. Interactive Society Scale Calculator
+    function updateCalculator(units) {
+      const u = parseInt(units, 10);
+      document.getElementById('calc-units-badge').innerText = `${u} Units`;
+      document.getElementById('calc-invoices').innerText = u.toLocaleString();
+      document.getElementById('calc-passes').innerText = (u * 15).toLocaleString();
+      document.getElementById('calc-hours').innerText = `${Math.round(u * 0.5)} hrs`;
+    }
+
+    // 2. Lead Form Handling
+    function handleDemoSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      const success = document.getElementById('form-success');
+      btn.innerHTML = `<span class="material-symbols-outlined text-[18px] animate-spin">refresh</span> <span>Confirming...</span>`;
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btn.classList.add('hidden');
+        success.classList.remove('hidden');
+      }, 900);
+    }
+  </script>
+
+
+  <script>
+    const billingScenarios = [
+      {
+        title: 'Tiered Utility & Per-Sqft Auto-Generation — Automated Billing Cascade',
+        badge: 'MAINTENANCE BILLING & ITEM ENGINE',
+        steps: [
+          { time: '00:00', title: 'Billing Daemon Service', desc: 'Batches 320 units; ingests piped gas, water sub-meter & sqft formulas', status: 'Generated', color: 'bg-blue-100 text-blue-700' },
+          { time: '00:01', title: 'SocMgt Tax & Tariff Calculator', desc: 'Computes 18% GST on non-exempt components & applies advance dues offsets', status: 'Auto-Itemized', color: 'bg-teal-100 text-teal-700' },
+          { time: '00:03', title: 'QuestPDF & ClosedXML Microservice', desc: 'Renders 320 A4 tax receipts with dynamic QR code & dispatches via WhatsApp API', status: 'Dispatched', color: 'bg-emerald-100 text-emerald-700' }
+        ],
+        stat1: '4.2s', stat1Lbl: '320 Invoices Done',
+        stat2: '100%', stat2Lbl: 'Auto-Reconciled',
+        stat3: '₹0', stat3Lbl: 'Discrepancy',
+        latency: '14ms', sub: 'Real-time webhook replication'
+      },
+      {
+        title: 'Razorpay / UPI Instant Auto-Settlement — Payment Cascade',
+        badge: 'PAYMENT GATEWAY & RECONCILIATION',
+        steps: [
+          { time: '00:00', title: 'Resident (Flat 204)', desc: 'Scans UPI QR code on WhatsApp invoice via PhonePe/GPay for ₹7,850', status: 'Captured', color: 'bg-blue-100 text-blue-700' },
+          { time: '00:01', title: 'Razorpay Webhook Listener', desc: 'Authenticates signature payload & matches against invoice ID #INV-2025-0841', status: 'Verified', color: 'bg-cyan-100 text-cyan-700' },
+          { time: '00:02', title: 'General Ledger Engine', desc: 'Credits Bank A/c, debits Accounts Receivable, and marks status as Settled', status: 'Settled', color: 'bg-emerald-100 text-emerald-700' }
+        ],
+        stat1: '1.2s', stat1Lbl: 'Payment Settle',
+        stat2: '100%', stat2Lbl: 'Ledger Synced',
+        stat3: '₹0', stat3Lbl: 'Manual Work',
+        latency: '11ms', sub: 'Razorpay Webhook v2 verified'
+      },
+      {
+        title: 'Partial Payment & Late Surcharge Escalation — Surcharge Cascade',
+        badge: 'ARREARS & ESCALATION ENGINE',
+        steps: [
+          { time: '00:00', title: 'Resident (Flat 701)', desc: 'Pays ₹5,000 partial amount against total assessment of ₹8,500', status: 'Partially Paid', color: 'bg-amber-100 text-amber-700' },
+          { time: '00:01', title: 'Aging Accounts Engine', desc: 'Allocates payment to oldest overdue interest first, then core maintenance', status: 'FIFO Allocated', color: 'bg-blue-100 text-blue-700' },
+          { time: '00:02', title: 'Notification Bot', desc: 'Sends grace-period alert with calculated 1.5% interest on pending ₹3,500', status: 'Escalated', color: 'bg-rose-100 text-rose-700' }
+        ],
+        stat1: '0.8s', stat1Lbl: 'FIFO Split Time',
+        stat2: '1.5%', stat2Lbl: 'Tier Surcharge',
+        stat3: '100%', stat3Lbl: 'RWA Rule Compliant',
+        latency: '16ms', sub: 'Automated credit memo issued'
+      },
+      {
+        title: 'Quarterly Audit Pack & QuestPDF Generation — Compliance Cascade',
+        badge: 'CPA REPORTING & RECONCILIATION',
+        steps: [
+          { time: '00:00', title: 'Society Treasurer', desc: 'Triggers Q3 financial closure for Solaria Palms Township', status: 'Initiated', color: 'bg-blue-100 text-blue-700' },
+          { time: '00:01', title: 'MT940 Bank Reconciliation Core', desc: 'Auto-matches 1,420 bank statement entries against general ledger accounts', status: 'MT940 Matched', color: 'bg-purple-100 text-purple-700' },
+          { time: '00:04', title: 'ClosedXML & QuestPDF Suite', desc: 'Compiles certified trial balance, balance sheet, and defaulter list to CPA vault', status: 'Audited', color: 'bg-emerald-100 text-emerald-700' }
+        ],
+        stat1: '3.8s', stat1Lbl: 'Full Audit Render',
+        stat2: '100%', stat2Lbl: 'CPA Compliant',
+        stat3: '0', stat3Lbl: 'Unmatched Items',
+        latency: '19ms', sub: 'Dual-hash SHA256 sealed'
+      }
+    ];
+
+    function switchBillingScenario(index) {
+      const data = billingScenarios[index];
+      document.querySelectorAll('.scenario-billing-tab').forEach((tab, i) => {
+        if (i === index) {
+          tab.className = 'scenario-billing-tab text-left p-4 rounded-2xl border-2 transition-all cursor-pointer border-emerald-500 bg-emerald-50/60 shadow-sm';
+        } else {
+          tab.className = 'scenario-billing-tab text-left p-4 rounded-2xl border-2 transition-all cursor-pointer border-slate-200 hover:border-slate-300 bg-slate-50/50';
+        }
+      });
+      document.getElementById('billing-engine-badge').innerText = data.badge;
+      document.getElementById('billing-scenario-title').innerText = data.title;
+      const timeline = document.getElementById('billing-timeline-container');
+      timeline.innerHTML = data.steps.map(s => `
+    <div class="flex items-start justify-between p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm">
+      <div class="flex items-start gap-3">
+        <span class="font-mono text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">${s.time}</span>
+        <div>
+          <div class="text-xs font-bold text-slate-900">${s.title}</div>
+          <div class="text-xs text-slate-500 mt-0.5">${s.desc}</div>
+        </div>
+      </div>
+      <span class="px-2.5 py-1 rounded ${s.color} text-xs font-bold shrink-0">${s.status}</span>
+    </div>
+  `).join('');
+      document.getElementById('billing-stat-1').innerText = data.stat1;
+      document.getElementById('billing-stat-1-lbl').innerText = data.stat1Lbl;
+      document.getElementById('billing-stat-2').innerText = data.stat2;
+      document.getElementById('billing-stat-2-lbl').innerText = data.stat2Lbl;
+      document.getElementById('billing-stat-3').innerText = data.stat3;
+      document.getElementById('billing-stat-3-lbl').innerText = data.stat3Lbl;
+      document.getElementById('billing-latency-tag').innerText = 'Latency: ' + data.latency;
+      document.getElementById('billing-telemetry-sub').innerText = data.sub;
+    }
+
+    const residentScenarios = [
+      {
+        title: 'Digital Tenant Move-In & KYC Approval — Automated Onboarding Cascade',
+        badge: 'PEOPLE & RESIDENT DIRECTORY',
+        steps: [
+          { time: '00:00', title: 'Tenant (Flat 402, Tower B)', desc: 'Uploads scanned lease agreement, Aadhaar & passport photo via Resident Web', status: 'Submitted', color: 'bg-blue-100 text-blue-700' },
+          { time: '00:02', title: 'Primary Owner (App Notification)', desc: 'Reviews digital tenancy tenure & applies cryptographic 1-tap e-sign approval', status: 'Owner Signed', color: 'bg-purple-100 text-purple-700' },
+          { time: '00:05', title: 'SocMgt Access & Security Controller', desc: 'Pushes tenant RFID & ANPR tags to Gate Barrier and sends Welcome Packet', status: 'Access Ready', color: 'bg-emerald-100 text-emerald-700' }
+        ],
+        stat1: '3 mins', stat1Lbl: 'Turnaround Time',
+        stat2: '100%', stat2Lbl: 'KYC & ID Verified',
+        stat3: '0', stat3Lbl: 'Ghost Badges',
+        latency: '22ms', sub: 'RBAC active session replication'
+      },
+      {
+        title: 'Multi-Unit Property Context Switcher — Dynamic Scope Cascade',
+        badge: 'HIERARCHY & CONTEXT SWITCHING',
+        steps: [
+          { time: '00:00', title: 'Owner (Units 201 & 504)', desc: 'Taps dynamic context switcher in mobile top bar from Flat 201 to Penthouse 504', status: 'Switched', color: 'bg-blue-100 text-blue-700' },
+          { time: '00:01', title: 'State & Session Resolver', desc: 'Re-scopes active ledger, vehicle tags, and service tickets to Unit 504 context', status: 'Scoped', color: 'bg-cyan-100 text-cyan-700' },
+          { time: '00:02', title: 'Client Viewport', desc: 'Instantaneous UI update with zero cache invalidation latency', status: 'Rendered', color: 'bg-emerald-100 text-emerald-700' }
+        ],
+        stat1: '18ms', stat1Lbl: 'Switch Latency',
+        stat2: '100%', stat2Lbl: 'Data Isolation',
+        stat3: '2 Units', stat3Lbl: 'Live Context',
+        latency: '15ms', sub: 'Zero reload state hydration'
+      },
+      {
+        title: 'Emergency Contact & Device Re-Authorization — Security Cascade',
+        badge: 'DEVICE SECURITY & IDENTITY',
+        steps: [
+          { time: '00:00', title: 'Resident (Flat 102)', desc: 'Registers new iPhone 16 device & updates blood group and emergency contact', status: 'Initiated', color: 'bg-blue-100 text-blue-700' },
+          { time: '00:01', title: 'Biometric 2FA Engine', desc: 'Issues biometric challenge; invalidates former device session token remotely', status: 'Old Token Revoked', color: 'bg-amber-100 text-amber-700' },
+          { time: '00:02', title: 'Edge Gate Sync', desc: 'Updates guard emergency lookup console with newly verified blood group and SOS contact', status: 'Synchronized', color: 'bg-emerald-100 text-emerald-700' }
+        ],
+        stat1: '0.4s', stat1Lbl: 'Session Revocation',
+        stat2: '100%', stat2Lbl: 'Biometric Verified',
+        stat3: '0', stat3Lbl: 'Orphan Sessions',
+        latency: '18ms', sub: 'JWT blacklisted across nodes'
+      },
+      {
+        title: 'Tenant Move-Out & Auto No-Dues Clearance — Exit Cascade',
+        badge: 'DEPARTURE & DEPOSIT ENGINE',
+        steps: [
+          { time: '00:00', title: 'Estate Manager', desc: 'Initiates move-out inspection protocol for vacating resident in Flat 803', status: 'Inspection Open', color: 'bg-blue-100 text-blue-700' },
+          { time: '00:03', title: 'SocMgt Ledger Audit Bot', desc: 'Confirms ₹0 balance across electricity, maintenance, clubhouse dues & damages', status: 'No-Dues Validated', color: 'bg-teal-100 text-teal-700' },
+          { time: '00:06', title: 'Perimeter Barrier Sync', desc: 'Deactivates RFID sticker, invalidates staff passes, and generates Exit Pass QR', status: 'Exit Cleared', color: 'bg-rose-100 text-rose-700' }
+        ],
+        stat1: '6 mins', stat1Lbl: 'Full Clearance',
+        stat2: '₹0', stat2Lbl: 'Pending Dues',
+        stat3: '100%', stat3Lbl: 'Gate Deactivated',
+        latency: '24ms', sub: 'Security gate offline cache cleared'
+      }
+    ];
+
+    function switchResidentScenario(index) {
+      const data = residentScenarios[index];
+      document.querySelectorAll('.scenario-resident-tab').forEach((tab, i) => {
+        if (i === index) {
+          tab.className = 'scenario-resident-tab text-left p-4 rounded-2xl border-2 transition-all cursor-pointer border-blue-600 bg-blue-50/60 shadow-sm';
+        } else {
+          tab.className = 'scenario-resident-tab text-left p-4 rounded-2xl border-2 transition-all cursor-pointer border-slate-200 hover:border-slate-300 bg-slate-50/50';
+        }
+      });
+      document.getElementById('resident-engine-badge').innerText = data.badge;
+      document.getElementById('resident-scenario-title').innerText = data.title;
+      const timeline = document.getElementById('resident-timeline-container');
+      timeline.innerHTML = data.steps.map(s => `
+    <div class="flex items-start justify-between p-3.5 rounded-xl bg-white border border-slate-200 shadow-sm">
+      <div class="flex items-start gap-3">
+        <span class="font-mono text-xs font-bold text-blue-600 bg-blue-50 px-2 py-1 rounded">${s.time}</span>
+        <div>
+          <div class="text-xs font-bold text-slate-900">${s.title}</div>
+          <div class="text-xs text-slate-500 mt-0.5">${s.desc}</div>
+        </div>
+      </div>
+      <span class="px-2.5 py-1 rounded ${s.color} text-xs font-bold shrink-0">${s.status}</span>
+    </div>
+  `).join('');
+      document.getElementById('resident-stat-1').innerText = data.stat1;
+      document.getElementById('resident-stat-1-lbl').innerText = data.stat1Lbl;
+      document.getElementById('resident-stat-2').innerText = data.stat2;
+      document.getElementById('resident-stat-2-lbl').innerText = data.stat2Lbl;
+      document.getElementById('resident-stat-3').innerText = data.stat3;
+      document.getElementById('resident-stat-3-lbl').innerText = data.stat3Lbl;
+      document.getElementById('resident-latency-tag').innerText = 'Latency: ' + data.latency;
+      document.getElementById('resident-telemetry-sub').innerText = data.sub;
+    }
+  </script>
+
+
+
+
+
+
+
+</body>
+
+</html>
